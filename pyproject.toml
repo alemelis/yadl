@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "yadl-framework"
+version = "1.0.0"
+description = "Yet Another Deep Learning framework"
+authors = ["Alessandro Melis <alessandro_melis@rocketmail.com>"]
+license = "unlicense"
+readme = "README.md"
+packages = [{include = "yadl"}]
+repository = "https://github.com/alemelis/yadl"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "*"
+tqdm = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
