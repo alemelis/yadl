@@ -25,7 +25,11 @@ class SGD(object):
         lr=1e-3,
         test_x=None,
         test_y=None,
+        initialise=True,
     ):
+        if initialise:
+            self.net.randomize()
+
         num_samples = len(train_x)
         dataset = list(zip(train_x, train_y))
 

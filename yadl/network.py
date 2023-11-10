@@ -9,6 +9,10 @@ class Network:
     name: str = ""
     layers: List[Layer] = None
 
+    def randomize(self):
+        for layer in self.layers:
+            layer.randomize()
+
     def forward(self, x):
         for layer in self.layers:
             x = layer.forward(x)

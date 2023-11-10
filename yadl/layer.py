@@ -18,6 +18,9 @@ class Layer:
     def backward(self, error, lr):
         raise NotImplementedError
 
+    def randomize(self):
+        pass
+
 
 @dataclass
 class Linear(Layer):
@@ -25,6 +28,9 @@ class Linear(Layer):
     output_size: int
 
     def __post_init__(self):
+        self.randomize()
+
+    def randomize(self):
         self.weights = np.random.rand(self.input_size, self.output_size) - 0.5
         self.bias = np.random.rand(1, self.output_size) - 0.5
 
