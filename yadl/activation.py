@@ -26,10 +26,21 @@ class Identity(ActivationFunction):
 
 class Sigmoid(ActivationFunction):
     def forward(self, x):
+        return 1 / (1 + np.exp(-x))
+
+    def grad(self, x):
+        return self.forward(x) * (1 - self.forward(x))
+
+    def __str__(self):
+        return "Sigmoid"
+
+
+class Tanh(ActivationFunction):
+    def forward(self, x):
         return np.tanh(x)
 
     def grad(self, x):
         return 1 - self.forward(x) ** 2
 
     def __str__(self):
-        return "Sigmoid"
+        return "Tanh"

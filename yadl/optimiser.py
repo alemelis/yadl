@@ -8,7 +8,7 @@ from yadl.network import Network
 
 
 @dataclass
-class SGD(object):
+class SGD:
     net: Network
     loss_func: Loss
 
